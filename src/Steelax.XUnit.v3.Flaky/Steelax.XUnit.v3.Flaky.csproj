@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net8;</TargetFrameworks>
+        <IsPackable>true</IsPackable>
+
+        <!-- NuGet package metadata (project-specific; shared metadata lives in Directory.Build.props) -->
+        <PackageId>Steelax.XUnit.v3.Flaky</PackageId>
+        <Description>Retry support for flaky xUnit v3 tests via [FlakyFact] and [FlakyTheory] attributes.</Description>
+        <PackageTags>xunit;xunit.v3;flaky;retry;testing</PackageTags>
+        <PackageReleaseNotes>Initial release.</PackageReleaseNotes>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="xunit.v3.extensibility.core" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+            <_Parameter1>$(AssemblyName).Tests</_Parameter1>
+        </AssemblyAttribute>
+    </ItemGroup>
+
+</Project>

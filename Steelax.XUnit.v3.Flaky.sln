@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0091FA8C-A4D7-4437-A9AB-2310B80360DE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{ED91051A-1D07-449D-9982-43EB5CE8695F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Steelax.XUnit.v3.Flaky", "src\Steelax.XUnit.v3.Flaky\Steelax.XUnit.v3.Flaky.csproj", "{49E7B846-4BD4-4E25-99B7-65126D77C819}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Steelax.XUnit.v3.Flaky.Tests", "test\Steelax.XUnit.v3.Flaky.Tests\Steelax.XUnit.v3.Flaky.Tests.csproj", "{DD10C6FC-484B-47BD-A390-A4CB5A2AC87B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "extras", "extras", "{828F4E04-69B8-4301-A68C-050485A63F01}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		Directory.Build.props = Directory.Build.props
+		Directory.Build.targets = Directory.Build.targets
+		Directory.Packages.props = Directory.Packages.props
+		GitVersion.yml = GitVersion.yml
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{49E7B846-4BD4-4E25-99B7-65126D77C819}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49E7B846-4BD4-4E25-99B7-65126D77C819}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49E7B846-4BD4-4E25-99B7-65126D77C819}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49E7B846-4BD4-4E25-99B7-65126D77C819}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD10C6FC-484B-47BD-A390-A4CB5A2AC87B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD10C6FC-484B-47BD-A390-A4CB5A2AC87B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD10C6FC-484B-47BD-A390-A4CB5A2AC87B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD10C6FC-484B-47BD-A390-A4CB5A2AC87B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{49E7B846-4BD4-4E25-99B7-65126D77C819} = {0091FA8C-A4D7-4437-A9AB-2310B80360DE}
+		{DD10C6FC-484B-47BD-A390-A4CB5A2AC87B} = {ED91051A-1D07-449D-9982-43EB5CE8695F}
+	EndGlobalSection
+EndGlobal
