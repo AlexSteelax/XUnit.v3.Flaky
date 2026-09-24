@@ -1,5 +1,4 @@
 ﻿using Steelax.XUnit.v3.Flaky.Enums;
-using Steelax.XUnit.v3.Flaky.Interfaces;
 using Steelax.XUnit.v3.Flaky.Models;
 using Steelax.XUnit.v3.Flaky.Tests.Fakes;
 using FakeItEasy;
@@ -57,7 +56,7 @@ public class FlakyTestCaseTests
         var testMethod = A.Fake<IXunitTestMethod>();
         var sut = GetSystemUnderTest(7, testMethod);
         var info = A.Fake<IXunitSerializationInfo>();
-        A.CallTo(() => info.GetValue(A<string>._)).Returns((object?)null);
+        A.CallTo(() => info.GetValue(A<string>._)).Returns(null);
         A.CallTo(() => info.GetValue("dn")).Returns(sut.TestCaseDisplayName);
         A.CallTo(() => info.GetValue("tm")).Returns(testMethod);
         A.CallTo(() => info.GetValue("id")).Returns("unique-id");
@@ -102,7 +101,7 @@ public class FlakyTestCaseTests
     {
         var messageBus = CreateMessageBus();
 
-        var sut = GetSuccessTestCase(3);
+        var sut = GetSuccessTestCase();
 
         await Run(sut, messageBus);
 
@@ -126,7 +125,7 @@ public class FlakyTestCaseTests
     {
         var messageBus = CreateMessageBus();
 
-        var sut = GetFailTestCase(3);
+        var sut = GetFailTestCase();
 
         await Run(sut, messageBus);
 
@@ -157,7 +156,7 @@ public class FlakyTestCaseTests
     }
 
     private static FlakyTestCase GetSystemUnderTest(
-        int retriesBeforeFail = IFlakyAttribute.DefaultRetriesBeforeFail,
+        int retriesBeforeFail = FlakyTestCase.DefaultRetriesBeforeFail,
         IXunitTestMethod? testMethod = null)
     {
         return new FlakyTestCase(
@@ -168,7 +167,7 @@ public class FlakyTestCaseTests
             retriesBeforeFail);
     }
 
-    private FailFlakyTestCase GetFailTestCase(int retriesBeforeFail = IFlakyAttribute.DefaultRetriesBeforeFail)
+    private static FailFlakyTestCase GetFailTestCase(int retriesBeforeFail = FlakyTestCase.DefaultRetriesBeforeFail)
     {
         return new FailFlakyTestCase(
             A.Fake<IXunitTestMethod>(),
@@ -178,7 +177,7 @@ public class FlakyTestCaseTests
             retriesBeforeFail);
     }
 
-    private SuccessFlakyTestCase GetSuccessTestCase(int retriesBeforeFail = IFlakyAttribute.DefaultRetriesBeforeFail)
+    private static SuccessFlakyTestCase GetSuccessTestCase(int retriesBeforeFail = FlakyTestCase.DefaultRetriesBeforeFail)
     {
         return new SuccessFlakyTestCase(
             A.Fake<IXunitTestMethod>(),
@@ -188,7 +187,7 @@ public class FlakyTestCaseTests
             retriesBeforeFail);
     }
 
-    private DelayedFlakyTestCase GetDelayedTestCase(int retriesBeforeFail = IFlakyAttribute.DefaultRetriesBeforeFail)
+    private static DelayedFlakyTestCase GetDelayedTestCase(int retriesBeforeFail = FlakyTestCase.DefaultRetriesBeforeFail)
     {
         return new DelayedFlakyTestCase(
             A.Fake<IXunitTestMethod>(),

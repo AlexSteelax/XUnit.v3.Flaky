@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Steelax.XUnit.v3.Flaky.Attributes;
+﻿using Steelax.XUnit.v3.Flaky.Attributes;
 using Steelax.XUnit.v3.Flaky.Interfaces;
 using Steelax.XUnit.v3.Flaky.Models;
 using Xunit.Sdk;

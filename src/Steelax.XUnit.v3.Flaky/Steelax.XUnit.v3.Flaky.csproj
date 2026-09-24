@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>net8;</TargetFrameworks>
+        <TargetFramework>netstandard2.0</TargetFramework>
         <IsPackable>true</IsPackable>
 
         <!-- NuGet package metadata (project-specific; shared metadata lives in Directory.Build.props) -->
@@ -10,6 +10,7 @@
         <PackageTags>xunit;xunit.v3;flaky;retry;testing</PackageTags>
         <PackageReleaseNotes>Initial release.</PackageReleaseNotes>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <LangVersion>latest</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>

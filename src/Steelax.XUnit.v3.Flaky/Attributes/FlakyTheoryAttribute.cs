@@ -1,5 +1,5 @@
-﻿using System;
-using Steelax.XUnit.v3.Flaky.Interfaces;
+﻿using Steelax.XUnit.v3.Flaky.Interfaces;
+using Steelax.XUnit.v3.Flaky.Models;
 using Steelax.XUnit.v3.Flaky.Services;
 using Xunit;
 using Xunit.v3;
@@ -28,9 +28,11 @@ public class FlakyTheoryAttribute : TheoryAttribute, IFlakyAttribute
     /// Constructor
     /// </summary>
     /// <param name="retriesBeforeFail">The number of retries prior to marking a test as failed.</param>
-    public FlakyTheoryAttribute(int retriesBeforeFail = IFlakyAttribute.DefaultRetriesBeforeFail)
+    public FlakyTheoryAttribute(int retriesBeforeFail = FlakyTestCase.DefaultRetriesBeforeFail)
     {
-        ArgumentOutOfRangeException.ThrowIfNegativeOrZero(retriesBeforeFail);
+        if (retriesBeforeFail <= 0)
+            throw new ArgumentOutOfRangeException(nameof(retriesBeforeFail), retriesBeforeFail, "The argument must be greater than zero.");
+        
         RetriesBeforeFail = retriesBeforeFail;
     }
 

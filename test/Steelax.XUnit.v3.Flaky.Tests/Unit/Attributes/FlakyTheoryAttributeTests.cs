@@ -1,5 +1,5 @@
 ﻿using Steelax.XUnit.v3.Flaky.Attributes;
-using Steelax.XUnit.v3.Flaky.Interfaces;
+using Steelax.XUnit.v3.Flaky.Models;
 using Xunit;
 
 namespace Steelax.XUnit.v3.Flaky.Tests.Unit.Attributes;
@@ -16,7 +16,7 @@ public class FlakyTheoryAttributeTests
     {
         _sut = new FlakyTheoryAttribute();
 
-        Assert.Equal(IFlakyAttribute.DefaultRetriesBeforeFail, _sut.RetriesBeforeFail);
+        Assert.Equal(FlakyTestCase.DefaultRetriesBeforeFail, _sut.RetriesBeforeFail);
     }
 
     [Theory]

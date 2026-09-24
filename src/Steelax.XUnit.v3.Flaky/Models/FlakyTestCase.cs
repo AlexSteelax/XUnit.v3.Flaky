@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
-using Steelax.XUnit.v3.Flaky.Enums;
+﻿using Steelax.XUnit.v3.Flaky.Enums;
 using Steelax.XUnit.v3.Flaky.Interfaces;
 using Steelax.XUnit.v3.Flaky.Services;
 using Xunit.Sdk;
@@ -15,6 +11,11 @@ namespace Steelax.XUnit.v3.Flaky.Models;
 /// </summary>
 internal class FlakyTestCase : XunitTestCase, ISelfExecutingXunitTestCase, IFlakyTestCase
 {
+    /// <summary>
+    /// The default number of retries before failing a test case.
+    /// </summary>
+    public const int DefaultRetriesBeforeFail = 3;
+    
     /// <summary>
     /// Message template string for running a test attempt
     /// </summary>
