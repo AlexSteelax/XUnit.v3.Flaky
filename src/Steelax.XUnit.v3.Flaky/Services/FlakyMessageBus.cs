@@ -47,7 +47,7 @@ internal sealed class FlakyMessageBus : IMessageBus
     /// </summary>
     public void Flush()
     {
-        while (_messageQueue.TryDequeue(out IMessageSinkMessage? message))
+        while (_messageQueue.TryDequeue(out var message))
         {
             _messageBus.QueueMessage(message);
         }

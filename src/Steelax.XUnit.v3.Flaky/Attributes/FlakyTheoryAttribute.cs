@@ -1,10 +1,10 @@
 ﻿using Steelax.XUnit.v3.Flaky.Interfaces;
 using Steelax.XUnit.v3.Flaky.Models;
 using Steelax.XUnit.v3.Flaky.Services;
-using Xunit;
 using Xunit.v3;
 
-namespace Steelax.XUnit.v3.Flaky.Attributes;
+// ReSharper disable once CheckNamespace
+namespace Xunit;
 
 /// <summary>
 /// <para>

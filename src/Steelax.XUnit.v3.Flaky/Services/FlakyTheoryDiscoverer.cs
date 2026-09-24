@@ -1,5 +1,4 @@
-﻿using Steelax.XUnit.v3.Flaky.Attributes;
-using Steelax.XUnit.v3.Flaky.Interfaces;
+﻿using Steelax.XUnit.v3.Flaky.Interfaces;
 using Steelax.XUnit.v3.Flaky.Models;
 using Xunit.Sdk;
 using Xunit.v3;
@@ -7,7 +6,7 @@ using Xunit.v3;
 namespace Steelax.XUnit.v3.Flaky.Services;
 
 /// <summary>
-/// Implementation of <see cref="Xunit.v3.TheoryDiscoverer"/> for handling <see cref="FlakyTheoryAttribute"/> decorated
+/// Implementation of <see cref="Xunit.v3.TheoryDiscoverer"/> for handling <see cref="Xunit.FlakyTheoryAttribute"/> decorated
 /// test cases.
 /// </summary>
 internal sealed class FlakyTheoryDiscoverer : TheoryDiscoverer
