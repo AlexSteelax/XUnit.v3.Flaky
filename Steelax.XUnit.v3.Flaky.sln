@@ -19,6 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "extras", "extras", "{828F4E
 		GitVersion.yml = GitVersion.yml
 		LICENSE = LICENSE
 		README.md = README.md
+		nuget.config = nuget.config
 	EndProjectSection
 EndProject
 Global
